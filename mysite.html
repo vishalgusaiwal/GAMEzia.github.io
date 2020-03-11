@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hammer</title>
+<style>
+    h1 { font-family: "Berlin Sans FB";
+    font-style: italic;
+    color:green;
+        border:hidden;
+    margin:0px 0px 0px 0px;}
+    h2 { border:hidden;
+        margin:0px 0px 2px 0px;}
+    p { font-family: Arial;
+       font-style: normal;
+       color:black;
+      border:hidden;
+      margin:0px 0px 0px 0px;}
+    body {
+        background-color: antiquewhite;
+        }
+    input { background-color: bisque;}
+    lable {color:lightblue;
+           font-family: Algerian;
+    border:hidden;
+    margin:0px 0px 0px 0px;}
+    p { color:black;
+        font-family: Arial;
+        }
+    a { font-family: Algerian;
+      font-style: oblique;
+      text-decoration: none;}
+    a:visited {font-family: Algerian;
+        font-style: oblique;
+        text-decoration: none;
+        color:blue;}
+    a:hover {font-family: Algerian;
+        font-style: oblique;
+        text-decoration:underline;
+    color:black;}
+    a:active {font-family: Algerian;
+        font-style: oblique;
+        text-decoration: none;
+    color:red;}
+</style>
+</head>
+<body>
+<h1 style="text-align:center">WELCOME</h1>
+<h2 style="text-align: center">to mysite.<br>please login to proceed further.</h2><br><br>
+<form style="text-align: center">
+    <lable for="username">USERNAME</lable>
+    <input type="text" id="username" placeholder="username" style="border-radius:10px" autofocus required><br>
+    <lable for="password">PASSWORD</lable>
+    <input type="password" id="password" placeholder="********" style="border-radius:10px" required>
+    <p><a href="signup.html" target="_blank">New user?</a></p>
+    <p><a href="forgotpassword.html" target="_blank">forgot password</a></p>
+    <p><input type="checkbox">make sure you are agree to visite my page.</p><br>
+    <input type="submit" value="sign in" formtarget="_self" formaction="home.html">
+</form>
+</body>
+</html>
