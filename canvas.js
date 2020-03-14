@@ -16,9 +16,9 @@ var mouse={
     x:undefined,
     y:undefined
 };
-window.addEventListener("mousemove", function(event){
-    mouse.x=event.x;
-    mouse.y=event.y;
+window.addEventListener("touchmove", function(event){
+    ontouchhend.x=event.x;
+    ontouchhend.y=event.y;
 });
 function CircleMotion(x,y,radius) {
     this.x=x;
@@ -32,8 +32,8 @@ function CircleMotion(x,y,radius) {
     this.update = function () {
         a = this.x;
         b = this.y;
-        this.x = mouse.x+Math.cos(this.radian)*(this.distancefrmcntr*100+100);
-        this.y = mouse.y+Math.sin(this.radian)*(this.distancefrmcntr*100+100);
+        this.x = ontouchhend.x+Math.cos(this.radian)*(this.distancefrmcntr*100+100);
+        this.y = ontouchhend.y+Math.sin(this.radian)*(this.distancefrmcntr*100+100);
         this.radian += 0.09;
         this.draw();
     }
