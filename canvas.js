@@ -32,8 +32,8 @@ function CircleMotion(x,y,radius) {
     this.update = function () {
         a = this.x;
         b = this.y;
-        this.x +=Math.cos(this.radian)*(this.distancefrmcntr*100+100);
-        this.y +=Math.sin(this.radian)*(this.distancefrmcntr*100+100);
+        this.x =x+Math.cos(this.radian)*(this.distancefrmcntr*100+100);
+        this.y =y+Math.sin(this.radian)*(this.distancefrmcntr*100+100);
         this.radian += 0.09;
         this.draw();
     }
