@@ -17,9 +17,9 @@ var touch={
     y:undefined
 };
 window.addEventListener("touchstart", function(event){
-    touch.x=event.x;
-    touch.y=event.y;
-    if(event.touches.length>0)
+    touch.x=event.touches[0].clientX;
+    touch.y=event.touches[0].clientY;
+    if(event.touches.length==1)
     {
         this.s = touch.x;
         this.t = touch.y;
