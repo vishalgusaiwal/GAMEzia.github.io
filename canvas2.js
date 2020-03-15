@@ -12,17 +12,17 @@ var colorarray= [
     '#131ff6',
     '#349ff3',
 ]
-var mouse={
+var touch={
     x:undefined,
     y:undefined
 };
 window.addEventListener("touchstart", function(event){
-    ontouchstart.x=event.x;
-    ontouchstart.y=event.y;
+    touch.x=event.x;
+    touch.y=event.y;
     if(event.touches.length>0)
     {
-        this.s = ontouchstart.x;
-        this.t = ontouchstart.y;
+        this.s = touch.x;
+        this.t = touch.y;
     }
 });
 /*window.addEventListener("touchmove", function (event:){
