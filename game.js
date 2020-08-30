@@ -7,18 +7,23 @@ window.onload = function(){
     var Southpipe = document.createElement("img");
     var bg  = document.createElement("img");
     var fg = document.createElement("img");
-    
+    if(game.width>window.innerWidth){
+    game.width = window.innerWidth;
+    }
+    if(game.height>window.innerHeight){
+    game.height = window.innerHeight;
+    }
     bird.src = "bird.png";
     Northpipe.src = "pipeNorth.png";
     Southpipe.src = "pipeSouth.png";
     fg.src = "fg.png";
     bg.src = "bg.png";
-    var gap = 80;
-    var constant = 300+gap;
+    var gap = game.height*(13.8/100);
+    var constant = game.height*(51.72/100)+gap;
     var bx = 0;
     var g = 9.8;
     var bX = 20+bx;
-    var bY = 290;
+    var bY = game.height/2;
     document.onkeydown = function(e){
         if(e.key=="ArrowUp"){
             bY-=10;
@@ -42,7 +47,7 @@ window.onload = function(){
     var x;
     function myfunc(){
        x =  setInterval(function(){
-            c.drawImage(bg,0,0,1320,580);
+            c.drawImage(bg,0,0,game.width,game.height);
             for(let i=0;i<pipe.length;i++){
                 c.drawImage(Northpipe,pipe[i].x,pipe[i].y);
                 c.drawImage(Southpipe,pipe[i].x,pipe[i].y+constant);
@@ -57,14 +62,14 @@ window.onload = function(){
                 if(bY+bird.height>=game.height-fg.height){
                     location.reload();
                 }
-                if(pipe[i].x==1080){
+                if(pipe[i].x==game.width*(81.81/100)){
                     pipe.push({
                         x:game.width,
                         y:Math.floor(Math.random()*Northpipe.height)-Northpipe.height
                     });
                 }
             }
-            c.drawImage(fg,0,game.height- fg.height,1320,game.height);
+            c.drawImage(fg,0,game.height- fg.height,game.width,game.height);
             c.drawImage(bird,bX,bY);
             bY+=g;
             //detection collision
