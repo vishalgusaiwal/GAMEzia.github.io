@@ -13,12 +13,20 @@ var colorarray= [
     '#349ff3',
 ]
 var touch={
-    x:window.innerWidth,
-    y:window.innerHeight
+    x:window.innerWidth/2,
+    y:window.innerHeight/2
 };
 window.addEventListener("mouseover", function(event){
     touch.x=event.clientX;
     touch.y=event.clientY;
+    var array = [];
+    for(var i=0;i<100;i++)
+{
+    var x = touch.x;
+    var y = touch.y;
+    const radius = Math.random()*2+1;
+    array.push(new CircleMotion(x,y,radius));
+}
 });
 /*window.addEventListener("touchmove", function (event:){
          ontouchmove.x = event.x;
@@ -54,14 +62,6 @@ function CircleMotion(x,y,radius) {
           ctx.closePath();
       }
 
-}
-var array = [];
-for(var i=0;i<100;i++)
-{
-    var x = touch.x;
-    var y = touch.y;
-    const radius = Math.random()*2+1;
-    array.push(new CircleMotion(x,y,radius));
 }
 //var particle = new CircleMotion(innerWidth/2,innerHeight/2);
 function animate() {
