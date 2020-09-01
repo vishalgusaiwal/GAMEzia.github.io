@@ -16,7 +16,7 @@ var touch={
     x:window.innerWidth/2,
     y:window.innerHeight/2
 };
-window.addEventListener("mouseover", function(event){
+window.addEventListener("mousemove", function(event){
     touch.x=event.clientX;
     touch.y=event.clientY;
     for(var i=0;i<100;i++)
