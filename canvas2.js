@@ -13,22 +13,13 @@ var colorarray= [
     '#349ff3',
 ]
 var touch={
-    x:event.clientX,
-    y:event.clientY
+    x:undefined,
+    y:undefined
 };
-window.addEventListener("touchstart", function(event){
-    touch.x=event.touches[0].clientX;
-    touch.y=event.touches[0].clientY;
-    if(event.touches.length==1)
-    {
-        this.s = touch.x;
-        this.t = touch.y;
-    }
+window.addEventListener("mouseover", function(event){
+    touch.x=event.clientX;
+    touch.y=event.clientY;
 });
-window.addEventListener("onmouseover",function(event){
-    touch.x = event.clientX;
-    touch.y = event.clientY;
-}
 /*window.addEventListener("touchmove", function (event:){
          ontouchmove.x = event.x;
              ontouchmove.y = event.y;
