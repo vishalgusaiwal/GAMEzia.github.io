@@ -24,7 +24,7 @@ window.addEventListener("mouseover", function(event){
     var x = touch.x;
     var y = touch.y;
     const radius = Math.random()*2+1;
-    array.push(new CircleMotion(x,y,radius));
+    array[i] = new CircleMotion(x,y,radius);
 }
 });
 /*window.addEventListener("touchmove", function (event:){
