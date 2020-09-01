@@ -13,8 +13,8 @@ var colorarray= [
     '#349ff3',
 ]
 var touch={
-    x:undefined,
-    y:undefined
+    x:event.clientX,
+    y:event.clientY
 };
 window.addEventListener("touchstart", function(event){
     touch.x=event.touches[0].clientX;
@@ -25,6 +25,10 @@ window.addEventListener("touchstart", function(event){
         this.t = touch.y;
     }
 });
+window.addEventListener("onmouseover",function(event){
+    touch.x = event.clientX;
+    touch.y = event.clientY;
+}
 /*window.addEventListener("touchmove", function (event:){
          ontouchmove.x = event.x;
              ontouchmove.y = event.y;
