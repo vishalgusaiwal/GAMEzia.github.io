@@ -58,8 +58,8 @@ function CircleMotion(x,y,radius) {
 var array = [];
 for(var i=0;i<100;i++)
 {
-    var x = event.clientX;
-    var y = event.clientY;
+    var x = touch.x;
+    var y = touch.y;
     const radius = Math.random()*2+1;
     array.push(new CircleMotion(x,y,radius));
 }
