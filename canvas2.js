@@ -13,8 +13,8 @@ var colorarray= [
     '#349ff3',
 ]
 var touch={
-    x:undefined,
-    y:undefined
+    x:window.innerWidth,
+    y:window.innerHeight
 };
 window.addEventListener("mouseover", function(event){
     touch.x=event.clientX;
