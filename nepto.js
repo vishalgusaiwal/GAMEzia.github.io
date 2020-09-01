@@ -13,8 +13,8 @@ var colorarray= [
     '#349ff3',
 ]
 var touch={
-    x:event.clientX,
-    y:event.clientY
+    x:undefined,
+    y:undefined
 };
 window.addEventListener("touchstart", function(event){
     touch.x=event.touches[0].clientX;
