@@ -19,7 +19,6 @@ var touch={
 window.addEventListener("mouseover", function(event){
     touch.x=event.clientX;
     touch.y=event.clientY;
-    var array = [];
     for(var i=0;i<100;i++)
 {
     var x = touch.x;
@@ -62,6 +61,14 @@ function CircleMotion(x,y,radius) {
           ctx.closePath();
       }
 
+}
+var array = [];
+for(var i=0;i<100;i++)
+{
+    var x = touch.x;
+    var y = touch.y;
+    const radius = Math.random()*2+1;
+    array.push(new CircleMotion(x,y,radius));
 }
 //var particle = new CircleMotion(innerWidth/2,innerHeight/2);
 function animate() {
