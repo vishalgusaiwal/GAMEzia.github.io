@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Todolist</title>
+	<link rel="stylesheet" type="text/css" href="todo.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" >
+	<script type="text/javascript" src="jQuery uncommpresed.js"></script>
+</head>
+<body>
+<div id="mySidebar" class="sidebar">
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style = "margin-left:0px">&times;</a>
+<a href="#">Theme1</a>
+<a href="#">Theme2</a>
+</div>
+<div id="main">
+<button class="openbtn" onclick="openNav()">&#9779; Themes</button>
+</div>
+<div class="row">
+<div class="column">
+<div id="container">
+	<h1>TO-DO LIST <i class="fas fa-address-book"></i> <i class="fas fa-plus"></i></h1>
+	<form class="to-do-form">
+		<input type="text" placeholder="ADD YOUR WORK" class="input">
+		<button class="addbtn">ADD</button>
+	</form>
+</div>
+</div>
+<div class="column">
+<div id="lists" class="amax">
+    <ul class="todoitem">
+	</ul>
+
+	<p>&nbsp&nbsp&nbsp&nbsp&nbsp<button id="hide" >Hide</button></p>
+</div>
+</div>
+</div>
+
+
+<script type="text/javascript" src="todo.js"></script>
+</body>
+</html>
