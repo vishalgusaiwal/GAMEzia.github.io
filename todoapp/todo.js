@@ -2,14 +2,6 @@ $("ul").on("click","li",function()
 {
 	$(this).toggleClass("completed");
 });
-$("ul").on("click","span",function(event)
-{
-$(this).parent().fadeOut(750,function()
-	{
-		$(this).remove();
-	});
-event.stopPropagation();
-});
 var form = document.querySelector('.to-do-form');
 var itm = document.querySelector('.todoitem');
 var input = document.querySelector('.input');
@@ -39,7 +31,7 @@ function renderTodos(item){
 		if(element.completed===true){
 			li.classList.add('completed');
 		}
-		li.innerHTML = `<span><i id = "icon" class="fa fa-trash"></i></span> ${element.name} `;
+		li.innerHTML = `<span><i class="fa fa-trash"></i></span> ${element.name} `;
 		itm.append(li);
 
 	});
@@ -55,15 +47,21 @@ function getFromStorage(){
 		renderTodos(todos);
 	}
 }
-var delete1 = document.getElementById('icon');
-delete1.addEventListener('click',function(event){
-		deleteTodo(event.target.parentElement.getAttribute('data-key'));
+$("ul").on("click","span",function(event)
+{
+$(this).parent().fadeOut(750,function()
+	{
+		deleteTodo($(this).attr('data-key'));
+		$(this).remove();
+	});
+event.stopPropagation();
 });
 function deleteTodo(id){
 	todos = todos.filter(function(item){
 		return item.id!=id;
 	});
 	addToLocalStorage(todos);
+	console.log("deleted successfully");
 }
 getFromStorage();
 $(".fa-plus").click(function()
